@@ -304,9 +304,19 @@ html[data-theme="dark"] .ico-moon{ transform:none; opacity:1; }
    html.js prefix, or the hidden state out-specifies it and nothing ever shows. */
 html.js .reveal{ opacity:0; transform:translateY(26px); }
 html.js .reveal.is-in{ opacity:1; transform:none; transition:opacity .85s var(--ease), transform .85s var(--ease); }
-[data-split] .line{ display:block; overflow:hidden; }
+/* The mask that hides each line before it slides up has to leave room for ink
+   that overflows the line box on BOTH edges — Playfair italic descends .194em
+   below the baseline and its ascenders rise above the box too, and
+   line-height:.9 squeezes the box tighter still. Without this the g in
+   "something" and the top of the s were being shorn off. The negative
+   margins cancel the padding, so line spacing is unchanged. */
+/* Flex column: adjacent .line margins would otherwise collapse into each other,
+   so the negative margins below wouldn't fully cancel the padding and the
+   heading would drift downward. Flex items never collapse margins. */
+[data-split]{ display:flex; flex-direction:column; align-items:flex-start; }
+[data-split] .line{ display:block; overflow:hidden; padding:.2em 0 .3em; margin:-.2em 0 -.3em; }
 [data-split] .line > i{ display:block; font-style:normal; }
-html.js [data-split] .line > i{ transform:translateY(105%); }
+html.js [data-split] .line > i{ transform:translateY(150%); }
 html.js [data-split].is-in .line > i{ transform:translateY(0); transition:transform 1s var(--ease); }
 html.js [data-split].is-in .line:nth-child(2) > i{ transition-delay:.09s; }
 
@@ -809,14 +819,6 @@ a.cline:hover span{ color:color-mix(in srgb,var(--accent-ink) 70%,transparent); 
 }
 @media (max-width:620px){ .modal__body .d-shots{ grid-template-columns:1fr; } }
 
-.modal__body .d-link{
-  display:inline-flex; align-items:center; gap:9px; margin-bottom:22px;
-  font-size:13px; font-weight:500; color:var(--accent);
-  border-bottom:1px solid color-mix(in srgb, var(--accent) 40%, transparent); padding-bottom:3px;
-  transition:gap .4s var(--ease);
-}
-.modal__body .d-link:hover{ gap:14px; }
-.modal__body .d-link svg{ width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 
 /* ---------- travel slideshow ---------- */
 .hobby--slides .hobby__media{ background:var(--ink); }
@@ -932,3 +934,30 @@ a.sb__item:hover{ color:var(--accent); }
 
 /* the footer sits above the bar, so it needs no clock of its own */
 .footer__mid{ opacity:.8; }
+
+/* ---------- shared external-link button ---------- */
+.ext-btn{
+  display:inline-flex; align-items:center; gap:11px;
+  padding:11px 20px; border-radius:999px;
+  border:1px solid var(--accent); color:var(--accent);
+  font-size:12.5px; font-weight:500; letter-spacing:.02em;
+  position:relative; overflow:hidden; isolation:isolate;
+  transition:color .4s var(--ease);
+}
+.ext-btn::before{
+  content:""; position:absolute; inset:0; z-index:-1; background:var(--accent);
+  transform:translateY(101%); transition:transform .5s var(--ease);
+}
+.ext-btn:hover{ color:var(--accent-ink); }
+.ext-btn:hover::before{ transform:translateY(0); }
+.ext-btn svg{
+  width:13px; height:13px; fill:none; stroke:currentColor;
+  stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;
+  transition:transform .45s var(--ease);
+}
+.ext-btn:hover svg{ transform:translate(3px,-3px); }
+
+/* in the experience accordion it sits under the paragraph */
+.exp__body .ext-btn{ margin-top:18px; }
+/* in a project modal it sits between the stat block and the tag row */
+.modal__body .ext-btn{ margin-bottom:22px; }
