@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" class="no-js" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Twelve AI bets, one budget — Adwait Chavan</title>
+<meta name="description" content="Everyone's 2x2 says fund the high-value, high-feasibility ideas. Solved as a constrained allocation problem instead, the same $18M buys 46% more expected value." />
+<meta name="author" content="Adwait Chavan" />
+<meta name="theme-color" content="#F2EDE4" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Twelve AI bets, one budget" />
+<meta property="og:description" content="Why ranking initiatives by headline value quietly destroys value — and what solving the allocation properly is worth." />
+<meta property="og:image" content="../assets/img/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23C1512A'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' font-weight='700' fill='%23F5F1E8' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/style.css?v=20260921" />
+<link rel="stylesheet" href="../assets/css/case.css?v=20260921" />
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav__mark magnetic" href="../index.html" aria-label="Adwait Chavan, home">
+    <span class="nav__mark-box">AC</span>
+    <span class="nav__mark-txt">Adwait&nbsp;Chavan</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#work">Work</a>
+    <a href="index.html">Case Studies</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#beyond">Beyond</a>
+  </nav>
+  <div class="nav__right">
+    <button class="theme-toggle magnetic" id="themeToggle" aria-label="Toggle colour theme" title="Toggle theme">
+      <svg viewBox="0 0 24 24" class="ico-sun" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.2" y2="6.2"/><line x1="17.8" y1="17.8" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.2" y2="17.8"/><line x1="17.8" y1="6.2" x2="19.6" y2="4.4"/></g></svg>
+      <svg viewBox="0 0 24 24" class="ico-moon" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4 8.6 8.6 0 1 0 20 14.2Z"/></svg>
+    </button>
+    <a class="btn btn--sm magnetic" href="../assets/docs/Adwait-Chavan-Resume.pdf" target="_blank" rel="noopener" data-cursor="Open">
+      Résumé <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+    </a>
+  </div>
+</header>
+
+<main>
+
+<header class="chero">
+  <div class="chero__crumb">
+    <a href="../index.html">Home</a><i>/</i><a href="index.html">Case Studies</a><i>/</i><span>Strategy</span>
+  </div>
+  <p class="chero__kind">Case 03 — Strategy &amp; Allocation</p>
+  <h1 class="chero__title">
+    Twelve AI bets, <span class="serif">one</span> budget
+  </h1>
+  <p class="chero__standfirst">
+    Every prioritisation deck ends with the same 2×2 and the same advice: do the
+    high-value, high-feasibility things first. That advice is not wrong. It is just
+    not an answer — and at $18M, the difference is worth 46%.
+  </p>
+
+  <div class="chero__meta">
+    <div><span>Discipline</span><b>Capital allocation</b></div>
+    <div><span>Methods</span><b>Risk-adjusted NPV · 0/1 knapsack</b></div>
+    <div><span>Decision</span><b>Which nine of twelve</b></div>
+    <div><span>Read</span><b>8 minutes</b></div>
+  </div>
+</header>
+
+<div class="cbody">
+
+<!-- ============ 01 ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">01</span>
+    <h2 class="cblock__title">The problem with the 2×2</h2>
+  </div>
+  <div class="prose">
+    <p>
+      A diversified industrial manufacturer has twelve candidate agentic-AI initiatives and
+      $18M to spend on them. Each has been scored for value and feasibility. The workshop
+      output is the familiar grid, and the familiar conclusion: start top-right.
+    </p>
+    <p>
+      Here is what that grid cannot tell you. It has no budget in it. It treats a $0.9M
+      document-retrieval tool and a $5.2M digital twin as two dots of equal weight. It has no
+      view on whether five expensive bets beat nine cheap ones. And it silently assumes that
+      "value" means the number in the value column, rather than that number multiplied by the
+      chance you ever see it.
+    </p>
+    <p class="pull">A 2×2 ranks things. A budget forces you to choose. Those are different problems.</p>
+    <p>
+      Reframed properly this is a constrained allocation problem — a 0/1 knapsack, solvable
+      exactly. The interesting part is not the technique. It is how much value the usual
+      approach leaves behind.
+    </p>
+
+    <div class="kpis">
+      <div><b id="pFull">$65.3M</b><span>Expected NPV, optimised at $18M</span></div>
+      <div><b id="pNaive">$44.6M</b><span>Same budget, ranked by headline value</span></div>
+      <div><b id="pGap">46%</b><span>More value, same money</span></div>
+      <div><b>9</b><span>Initiatives funded instead of five</span></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <p class="note__k">Method note</p>
+    <p>
+      The twelve initiatives are an <strong>illustrative portfolio</strong> built to span a
+      realistic range: fast cheap automation at one end, long-horizon platform bets at the other.
+      Each carries a cost, an annual value if it works, a probability of success, and a
+      time-to-value. Expected NPV discounts the payoff over five years at 12% and pushes it out
+      by the implementation lag, then multiplies by the probability of success.
+    </p>
+    <p>
+      Costs sit on $0.1M boundaries, so the allocation is solved <strong>exactly</strong> by
+      dynamic programming rather than approximated with a greedy ratio sort — which matters,
+      because greedy gets this wrong precisely when the budget binds hardest.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 02 THE LAB ============ -->
+<section class="cblock" id="stratLab">
+  <div class="cblock__head">
+    <span class="cblock__no">02</span>
+    <h2 class="cblock__title">Solve it properly</h2>
+  </div>
+  <div class="prose">
+    <p>
+      Move the budget and watch the portfolio recompose. The list is ordered by capital
+      efficiency — expected NPV per dollar — which is the ranking that actually matters once
+      money is scarce, and which no 2×2 will ever show you.
+    </p>
+  </div>
+
+  <div class="lab">
+    <div class="lab__head">
+      <span class="lab__title"><i>◆</i> Portfolio optimiser</span>
+      <span class="lab__hint">Highlighted rows are funded at the current budget.</span>
+    </div>
+    <div class="lab__grid lab__grid--wide">
+      <div class="lab__controls">
+        <div class="ctl">
+          <label for="budget">Budget <b id="budgetv">$18.0M</b></label>
+          <input type="range" id="budget" min="60" max="300" value="180" step="1" />
+          <div class="ctl__scale"><span>$6M</span><span>$30M</span></div>
+        </div>
+        <div class="ctl">
+          <label>Commitment model</label>
+          <div class="seg" role="group" aria-label="Commitment model">
+            <button type="button" id="modeFull" aria-pressed="true">Full commit</button>
+            <button type="button" id="modeStage" aria-pressed="false">Stage-gated</button>
+          </div>
+        </div>
+        <div class="readout" style="grid-template-columns:1fr 1fr">
+          <div><span>Expected NPV</span><b id="portNpv">$65.3M</b></div>
+          <div><span>Funded</span><b id="portCount">9 of 12</b></div>
+          <div><span>Committed</span><b id="portSpend">$17.8M</b></div>
+          <div><span>vs. ranking by value</span><b id="naiveGap">+46%</b></div>
+        </div>
+      </div>
+      <div class="lab__out">
+        <div class="picker" id="pickerList"></div>
+        <div class="verdict" id="stratVerdict"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lab">
+    <div class="lab__head">
+      <span class="lab__title"><i>◆</i> The grid, with the answer drawn on it</span>
+      <span class="lab__hint">Bubble size is cost. Solid dots are funded.</span>
+    </div>
+    <div class="lab__out">
+      <div class="chart" id="matrixChart"></div>
+      <p class="chart__cap">
+        The two largest bubbles sit furthest left — highest headline value, lowest chance of
+        working, most capital consumed. They are the first two things a value ranking funds and
+        the last two things the optimiser will touch.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 WHY ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">03</span>
+    <h2 class="cblock__title">Why ranking by value destroys value</h2>
+  </div>
+  <div class="prose">
+    <p>
+      At $18M, ranking by headline annual value funds five initiatives and spends $17.7M doing
+      it. Two of them — the digital twin at $5.2M and autonomous procurement at $4.3M — absorb
+      more than half the budget between them, at 39% and 47% probability of success and
+      two-year and eighteen-month payback lags respectively.
+    </p>
+    <p>
+      The optimiser funds nine, spends $17.8M, and never touches either. Not because they are
+      bad ideas, but because each dollar committed to them displaces roughly three dollars of
+      expected value elsewhere in the portfolio. <strong>The opportunity cost is invisible on a
+      2×2 because a 2×2 has no budget line.</strong>
+    </p>
+    <p>
+      Push the budget slider above $28M and the two approaches converge — with enough money the
+      ordering stops mattering, because you fund everything either way.
+    </p>
+  </div>
+
+  <div class="lab">
+    <div class="lab__head">
+      <span class="lab__title"><i>◆</i> Where the gap opens and closes</span>
+      <span class="lab__hint">Both strategies, across every budget.</span>
+    </div>
+    <div class="lab__out">
+      <div class="chart" id="sweepChart"></div>
+      <p class="chart__cap">
+        The dashed line is the value ranking. The gap is widest exactly where real budgets sit —
+        tight enough to force trade-offs, loose enough that people believe the trade-offs are obvious.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 STAGE GATE ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">04</span>
+    <h2 class="cblock__title">Does buying optionality change the answer?</h2>
+  </div>
+  <div class="prose">
+    <p>
+      The obvious next move is stage-gating: spend 20% on a pilot, then commit the rest only if
+      it works. That is a real option, and it should be worth most on the initiatives with the
+      most uncertainty. The model says it is — the digital twin gains $2.5M of expected value
+      and autonomous procurement $1.8M, against nine cents for the near-certain document tool.
+    </p>
+    <p>
+      So it should reshuffle the portfolio. Toggle <em>Stage-gated</em> above and it does not.
+      Across every budget from $6M to $30M, <strong>stage-gating changes what the portfolio is
+      worth and never changes what is in it.</strong> Expected NPV rises from
+      <span id="pFull2">$65.3M</span> to <span id="pStaged">$69.5M</span> — about
+      <span id="pStagedGain">6%</span> — on exactly the same nine initiatives.
+    </p>
+    <p>
+      The moonshots gain the most and still lose, because buying an option on a poor use of
+      capital leaves it a poor use of capital. That is a genuinely useful thing to be able to
+      tell an executive team, and it is the opposite of what the framework literature implies.
+    </p>
+    <p class="pull">Stage-gating is an execution discipline, not a selection criterion. Do it anyway — it is 6% for free.</p>
+  </div>
+</section>
+
+<!-- ============ 05 RECOMMENDATION ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">05</span>
+    <h2 class="cblock__title">What I would recommend</h2>
+  </div>
+  <div class="prose">
+    <ol>
+      <li>
+        <strong>Fund the nine, stage-gate all of them.</strong> $17.8M committed, roughly $69M
+        of expected NPV. Every one carries a pilot gate at 20% of budget with a pre-agreed
+        kill criterion written before the work starts, not after.
+      </li>
+      <li>
+        <strong>Defer the digital twin and autonomous procurement explicitly.</strong> Not
+        "deprioritised", which everyone reads as "dead". Deferred, with a named condition for
+        revisiting: a higher budget, or evidence that moves the success probability above 60%.
+        The analysis says they lose on capital efficiency today, not that they are bad ideas.
+      </li>
+      <li>
+        <strong>Re-run the allocation every two quarters.</strong> The inputs that decide this
+        are probabilities and time-to-value estimates, and those move faster than annual
+        planning cycles. A portfolio set once a year is a portfolio optimised for last year.
+      </li>
+      <li>
+        <strong>Make people estimate probability of success explicitly.</strong> The single
+        highest-leverage change is not the optimiser — it is forcing the number that the 2×2
+        lets teams leave implicit. Half the value of this exercise came from asking "and what
+        are the odds this actually works?" out loud.
+      </li>
+    </ol>
+
+    <h3>Where this is fragile</h3>
+    <ul>
+      <li>
+        <strong>The probabilities are judgements.</strong> They come from workshops, not data,
+        and people are systematically overconfident about projects they proposed. I would
+        calibrate them against the organisation's historical delivery record before trusting
+        the third decimal place.
+      </li>
+      <li>
+        <strong>The initiatives are modelled as independent.</strong> They are not — several
+        would share a data platform, so funding one lowers the cost of the next. Real
+        dependencies would favour clusters over the scattered portfolio this produces.
+      </li>
+      <li>
+        <strong>Nine simultaneous initiatives may exceed delivery capacity.</strong> The budget
+        is the constraint in this model; in most organisations the binding constraint is the
+        number of people who can actually run a change programme. Adding a headcount constraint
+        would likely shrink the portfolio and raise the value of stage-gating.
+      </li>
+    </ul>
+  </div>
+</section>
+
+</div>
+
+<nav class="cnext">
+  <a href="consulting-cost-to-serve.html" data-cursor="Read">
+    <span class="cnext__l">← Previous — Consulting</span>
+    <span class="cnext__t">Where did 420 basis points go?</span>
+  </a>
+  <a href="index.html">
+    <span class="cnext__l">All case studies →</span>
+  </a>
+</nav>
+
+</main>
+
+<footer class="footer">
+  <span>© <span id="year">2026</span> Adwait Chavan</span>
+  <span class="footer__mid">Every number on this page is computed live in your browser.</span>
+  <button class="totop magnetic" id="toTop" data-cursor="Top">Back to top ↑</button>
+</footer>
+
+<aside class="statusbar" aria-label="Contact details">
+  <span class="sb__item sb__loc">
+    <i class="sb__pin" aria-hidden="true"></i>
+    <b class="sb__full">Based in the United States</b><b class="sb__short">United States</b>
+  </span>
+  <span class="sb__item sb__clock">
+    <i class="sb__pulse" aria-hidden="true"></i>
+    <b><span id="clock">--:--:--</span></b>
+  </span>
+  <a class="sb__item" href="https://www.linkedin.com/in/adwait-chavan-65b953113/" target="_blank" rel="noopener" data-cursor="Open"><b>LinkedIn</b></a>
+  <a class="sb__item" href="mailto:adwaitc07@gmail.com" data-cursor="Mail">
+    <b class="sb__full">adwaitc07@gmail.com</b><b class="sb__short">Email</b>
+  </a>
+</aside>
+
+<script src="../assets/js/main.js?v=20260921"></script>
+<script src="../assets/js/charts.js?v=20260921"></script>
+<script src="../assets/js/case-strategy.js?v=20260921"></script>
+</body>
+</html>

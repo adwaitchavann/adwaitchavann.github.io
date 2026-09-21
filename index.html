@@ -20,7 +20,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/style.css?v=20260921" />
+<link rel="stylesheet" href="assets/css/case.css?v=20260921" />
 </head>
 <body>
 
@@ -53,6 +54,7 @@
 
   <nav class="nav__links" aria-label="Primary">
     <a href="#work" data-nav>Work</a>
+    <a href="#cases" data-nav>Case Studies</a>
     <a href="#experience" data-nav>Experience</a>
     <a href="#skills" data-nav>Skills</a>
     <a href="#education" data-nav>Education</a>
@@ -75,11 +77,12 @@
   <div class="menu__list">
     <a href="#home" data-nav><span>01</span> Home</a>
     <a href="#work" data-nav><span>02</span> Selected Work</a>
-    <a href="#experience" data-nav><span>03</span> Experience</a>
-    <a href="#skills" data-nav><span>04</span> Skills</a>
-    <a href="#education" data-nav><span>05</span> Education</a>
-    <a href="#beyond" data-nav><span>06</span> Beyond Work</a>
-    <a href="#contact" data-nav><span>07</span> Contact</a>
+    <a href="#cases" data-nav><span>03</span> Case Studies</a>
+    <a href="#experience" data-nav><span>04</span> Experience</a>
+    <a href="#skills" data-nav><span>05</span> Skills</a>
+    <a href="#education" data-nav><span>06</span> Education</a>
+    <a href="#beyond" data-nav><span>07</span> Beyond Work</a>
+    <a href="#contact" data-nav><span>08</span> Contact</a>
   </div>
   <div class="menu__foot">
     <span>Baltimore, MD</span>
@@ -349,6 +352,71 @@
 </section>
 
 <!-- ============ EXPERIENCE ============ -->
+<!-- ============ CASE STUDIES ============ -->
+<section class="section cases" id="cases">
+  <div class="section__head">
+    <h2 class="section__title" data-split>
+      <span class="ink">Case</span><br /><span class="accent serif">Studies</span>
+    </h2>
+    <div class="section__lede reveal">
+      <p>Three problems I modelled end to end — finance, consulting, strategy. Each one ships with a live model you can drive, so the assumptions are arguable rather than asserted.</p>
+      <span class="section__count">03 / Deep dives</span>
+    </div>
+  </div>
+
+  <div class="cgrid">
+
+    <a class="ccard reveal" href="case-studies/finance-hospital-valuation.html" data-cursor="Read">
+      <span class="ccard__kind">01 — Finance</span>
+      <h3 class="ccard__title">What is a hospital system actually worth?</h3>
+      <p class="ccard__sum">
+        A $1.45B ask, three valuation methods, three different answers. The DCF clears it by 3%,
+        the Monte Carlo calls it a coin flip, and the LBO says a sponsor cannot get there at all.
+      </p>
+      <div class="ccard__tools"><span>DCF</span><span>Monte Carlo</span><span>LBO</span></div>
+      <span class="ccard__foot">
+        Read the case
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg>
+      </span>
+    </a>
+
+    <a class="ccard reveal" data-delay="80" href="case-studies/consulting-cost-to-serve.html" data-cursor="Read">
+      <span class="ccard__kind">02 — Consulting</span>
+      <h3 class="ccard__title">Where did 420 basis points go?</h3>
+      <p class="ccard__sum">
+        A carrier grew revenue 18% and lost 420bps of margin doing it. The bridge finds the
+        segment that ate the difference; the cost stack finds the reason nobody noticed.
+      </p>
+      <div class="ccard__tools"><span>Profit bridge</span><span>Cost to serve</span><span>Elasticity</span></div>
+      <span class="ccard__foot">
+        Read the case
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg>
+      </span>
+    </a>
+
+    <a class="ccard reveal" data-delay="160" href="case-studies/strategy-ai-portfolio.html" data-cursor="Read">
+      <span class="ccard__kind">03 — Strategy</span>
+      <h3 class="ccard__title">Twelve AI bets, one budget</h3>
+      <p class="ccard__sum">
+        Solved as a constrained allocation problem rather than a 2×2, the same $18M buys 46%
+        more expected value — and the two biggest headline numbers never get funded.
+      </p>
+      <div class="ccard__tools"><span>Risk-adjusted NPV</span><span>Knapsack</span><span>Real options</span></div>
+      <span class="ccard__foot">
+        Read the case
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg>
+      </span>
+    </a>
+
+  </div>
+
+  <div class="cases__foot reveal">
+    <a class="link-underline magnetic" href="case-studies/index.html" data-cursor="Open">
+      All case studies and the method notes behind them →
+    </a>
+  </div>
+</section>
+
 <section class="section exp" id="experience">
   <div class="section__head">
     <h2 class="section__title" data-split>
@@ -683,6 +751,6 @@
   </div>
 </div>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=20260921"></script>
 </body>
 </html>

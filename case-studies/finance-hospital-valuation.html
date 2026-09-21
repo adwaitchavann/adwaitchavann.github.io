@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en" class="no-js" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>What a hospital system is worth — Adwait Chavan</title>
+<meta name="description" content="A full DCF, Monte Carlo and LBO on a $1.45B regional health system. The point estimate clears the ask by 3%. The distribution says it is a coin flip." />
+<meta name="author" content="Adwait Chavan" />
+<meta name="theme-color" content="#F2EDE4" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What is a four-hospital system actually worth?" />
+<meta property="og:description" content="DCF, Monte Carlo and LBO on a $1.45B ask — and the $140M gap between what a sponsor and a strategic can pay." />
+<meta property="og:image" content="../assets/img/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23C1512A'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' font-weight='700' fill='%23F5F1E8' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/style.css?v=20260921" />
+<link rel="stylesheet" href="../assets/css/case.css?v=20260921" />
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav__mark magnetic" href="../index.html" aria-label="Adwait Chavan, home">
+    <span class="nav__mark-box">AC</span>
+    <span class="nav__mark-txt">Adwait&nbsp;Chavan</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#work">Work</a>
+    <a href="index.html">Case Studies</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#beyond">Beyond</a>
+  </nav>
+  <div class="nav__right">
+    <button class="theme-toggle magnetic" id="themeToggle" aria-label="Toggle colour theme" title="Toggle theme">
+      <svg viewBox="0 0 24 24" class="ico-sun" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.2" y2="6.2"/><line x1="17.8" y1="17.8" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.2" y2="17.8"/><line x1="17.8" y1="6.2" x2="19.6" y2="4.4"/></g></svg>
+      <svg viewBox="0 0 24 24" class="ico-moon" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4 8.6 8.6 0 1 0 20 14.2Z"/></svg>
+    </button>
+    <a class="btn btn--sm magnetic" href="../assets/docs/Adwait-Chavan-Resume.pdf" target="_blank" rel="noopener" data-cursor="Open">
+      Résumé <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+    </a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<header class="chero">
+  <div class="chero__crumb">
+    <a href="../index.html">Home</a><i>/</i><a href="index.html">Case Studies</a><i>/</i><span>Finance</span>
+  </div>
+  <p class="chero__kind">Case 01 — Finance &amp; Valuation</p>
+  <h1 class="chero__title">
+    What is a hospital system <span class="serif">actually</span> worth?
+  </h1>
+  <p class="chero__standfirst">
+    A regional operator is on the block at $1.45B. I built the DCF, ran it 10,000 times,
+    then checked what a private-equity buyer could pay. The three answers disagree — and
+    the disagreement is the entire deal.
+  </p>
+
+  <div class="chero__meta">
+    <div><span>Discipline</span><b>Valuation</b></div>
+    <div><span>Methods</span><b>DCF · Monte Carlo · LBO</b></div>
+    <div><span>Built with</span><b>Vanilla JS, no libraries</b></div>
+    <div><span>Read</span><b>9 minutes</b></div>
+  </div>
+</header>
+
+<div class="cbody">
+
+<!-- ============ 01 THE QUESTION ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">01</span>
+    <h2 class="cblock__title">The question on the table</h2>
+  </div>
+  <div class="prose">
+    <p>
+      <strong>Meridian Health Partners</strong> is a four-hospital regional system: roughly
+      1,100 licensed beds, $1.18B of revenue, and a 13.5% EBITDA margin. The owners want
+      $1.45B for it — about 9.1× trailing EBITDA. Two very different buyers are circling:
+      a larger health system that already operates in the next county, and a private-equity
+      sponsor running a healthcare services platform.
+    </p>
+    <p>
+      The naive version of this question is "is $1.45B too much?" The useful version is
+      <em>"too much for whom, and how confident can we be?"</em> Those turn out to have
+      different answers, and the space between them is where the negotiation actually lives.
+    </p>
+
+    <div class="kpis">
+      <div><b>$1.49<span class="u">B</span></b><span>Base-case DCF enterprise value</span></div>
+      <div><b>77<span class="u">%</span></b><span>Of that value sits in the terminal period</span></div>
+      <div><b>56<span class="u">%</span></b><span>Of Monte Carlo trials clear the ask</span></div>
+      <div><b>$1.35<span class="u">B</span></b><span>Most a sponsor can pay at a 20% hurdle</span></div>
+    </div>
+
+    <p>
+      Read those four numbers together and the case makes itself. The point estimate says
+      yes by three percent. Everything else says that three percent is noise.
+    </p>
+  </div>
+
+  <div class="note">
+    <p class="note__k">Method note — where the numbers come from</p>
+    <p>
+      Meridian is an <strong>illustrative composite</strong>, not a real company. Its operating
+      profile is built to sit inside the ranges published for US community hospital systems:
+      mid-teens EBITDA margins, 5–6% of revenue reinvested as capex, and precedent transactions
+      clearing in the 7.5–10× EBITDA band. I have used a composite deliberately — inventing
+      financials for a named real hospital and presenting them as fact would be worse than
+      useless.
+    </p>
+    <p>
+      Everything downstream of those inputs is real work: the discounting, the terminal-value
+      treatment, the correlation structure in the simulation and the debt schedule all run live
+      in your browser. Move a slider and every number, chart and verdict on this page recomputes.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 02 THE BUILD ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">02</span>
+    <h2 class="cblock__title">How the model is put together</h2>
+  </div>
+  <div class="prose">
+    <h3>Free cash flow</h3>
+    <p>
+      Revenue compounds at 4.2%. The EBITDA margin walks linearly from today's 13.5% to a
+      terminal 15.0% by year five — the throughput and labour-cost story a buyer would
+      underwrite. From there, unlevered free cash flow is the usual subtraction:
+    </p>
+    <p>
+      <code>UFCF = EBITDA − cash taxes − capex − Δ working capital</code>, with cash taxes
+      levied on EBIT so depreciation still earns its shield. Hospitals are capital-hungry, so
+      capex at 5.5% of revenue eats most of the D&amp;A add-back — which is exactly why hospital
+      EBITDA multiples look cheap next to the cash they actually throw off.
+    </p>
+
+    <h3>Discount rate</h3>
+    <p>
+      An 8.5% WACC, built rather than assumed: a 4.2% risk-free rate, a 5.0% equity risk
+      premium on a 0.95 levered beta, plus 150bps of size premium for a single-region operator,
+      blended against after-tax debt at 35% target leverage.
+    </p>
+
+    <h3>Terminal value</h3>
+    <p>
+      Gordon growth at 2.5%, cross-checked against an exit multiple. This is the part of every
+      DCF that deserves suspicion, and I have put the number on the page rather than buried it:
+      <strong>77% of the enterprise value is terminal</strong>. We are not really valuing five
+      years of cash flow. We are valuing an assumption about the year 2031 and beyond, and then
+      decorating it with a forecast.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 03 LAB 1 — DCF ============ -->
+<section class="cblock" id="dcfLab">
+  <div class="cblock__head">
+    <span class="cblock__no">03</span>
+    <h2 class="cblock__title">Drive the model yourself</h2>
+  </div>
+  <div class="prose">
+    <p>
+      Every assumption that matters is a slider. The honest test of a valuation is not whether
+      it produces a number, but how hard you have to push before the number changes its mind.
+      Try moving WACC by 100bps and watch a $1.45B decision move by more than $300M.
+    </p>
+  </div>
+
+  <div class="lab">
+    <div class="lab__head">
+      <span class="lab__title"><i>◆</i> Live DCF — Meridian Health Partners</span>
+      <span class="lab__hint">Drag any assumption. Everything below recomputes.</span>
+    </div>
+    <div class="lab__grid">
+      <div class="lab__controls">
+        <div class="ctl">
+          <label for="dcfG">Revenue CAGR <b id="dcfGv">4.2%</b></label>
+          <input type="range" id="dcfG" min="10" max="80" value="42" step="1" />
+          <div class="ctl__scale"><span>1.0%</span><span>8.0%</span></div>
+        </div>
+        <div class="ctl">
+          <label for="dcfM">Terminal EBITDA margin <b id="dcfMv">15.0%</b></label>
+          <input type="range" id="dcfM" min="110" max="200" value="150" step="1" />
+          <div class="ctl__scale"><span>11.0%</span><span>20.0%</span></div>
+        </div>
+        <div class="ctl">
+          <label for="dcfW">WACC <b id="dcfWv">8.50%</b></label>
+          <input type="range" id="dcfW" min="60" max="120" value="85" step="1" />
+          <div class="ctl__scale"><span>6.0%</span><span>12.0%</span></div>
+        </div>
+        <div class="ctl">
+          <label for="dcfT">Terminal growth <b id="dcfTv">2.50%</b></label>
+          <input type="range" id="dcfT" min="5" max="40" value="25" step="1" />
+          <div class="ctl__scale"><span>0.5%</span><span>4.0%</span></div>
+        </div>
+        <div class="ctl">
+          <label for="dcfC">Capex % of revenue <b id="dcfCv">5.5%</b></label>
+          <input type="range" id="dcfC" min="30" max="85" value="55" step="1" />
+          <div class="ctl__scale"><span>3.0%</span><span>8.5%</span></div>
+        </div>
+        <button class="lab__reset" id="dcfReset" type="button">Reset to base case</button>
+      </div>
+
+      <div class="lab__out">
+        <div class="readout">
+          <div><span>Enterprise value</span><b id="evOut">$1.49B</b></div>
+          <div><span>vs. $1.45B ask</span><b id="vsAsk">+$42M</b></div>
+          <div><span>Entry multiple</span><b id="multOut">9.4×</b></div>
+          <div><span>Terminal share</span><b id="tvShare">77%</b></div>
+        </div>
+        <div class="chart" id="fcfChart"></div>
+        <p class="chart__cap">
+          Year-5 free cash flow bridge. Capex is the line that decides whether a hospital is a
+          cash business or a treadmill.
+        </p>
+        <div class="verdict" id="dcfVerdict"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lab">
+    <div class="lab__head">
+      <span class="lab__title"><i>◆</i> Sensitivity — WACC × terminal growth</span>
+      <span class="lab__hint">Centred on your current slider position.</span>
+    </div>
+    <div class="lab__out">
+      <div id="heatOut"></div>
+      <p class="chart__cap">
+        A 200bps swing across this grid moves enterprise value by roughly a billion dollars.
+        Any valuation quoted to three significant figures is pretending this table does not exist.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 MONTE CARLO ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">04</span>
+    <h2 class="cblock__title">One number is a guess. Ten thousand is a decision.</h2>
+  </div>
+  <div class="prose">
+    <p>
+      A sensitivity table shows what happens if one assumption is wrong. Reality is that
+      several are wrong at once, and not independently. Systems that grow admissions also tend
+      to lever their fixed cost base, so growth and margin move together — modelling them as
+      independent would quietly understate both tails.
+    </p>
+    <p>
+      So the simulation draws a shared <em>operating quality</em> factor first, then layers
+      idiosyncratic noise on growth, terminal margin, capex intensity, WACC and terminal growth.
+      Ten thousand trials, the same seed every time so the page does not change its answer
+      when you refresh it.
+    </p>
+  </div>
+
+  <div class="lab">
+    <div class="lab__head">
+      <span class="lab__title"><i>◆</i> Monte Carlo — 10,000 trials</span>
+      <span class="lab__hint">Uses your current slider values as the distribution centre.</span>
+    </div>
+    <div class="lab__out">
+      <div class="readout">
+        <div><span>P10</span><b id="mcP10">—</b></div>
+        <div><span>Median</span><b id="mcP50">—</b></div>
+        <div><span>P90</span><b id="mcP90">—</b></div>
+        <div><span>Clears the ask</span><b id="mcProb">—</b></div>
+      </div>
+      <div class="chart" id="mcChart"></div>
+      <p class="chart__cap">
+        Distribution of enterprise value. The dashed lines are percentiles; the solid terracotta
+        line is the $1.45B ask.
+      </p>
+      <div class="verdict" id="mcVerdict"></div>
+      <p style="margin-top:16px">
+        <button class="btn btn--sm" id="mcRun" type="button">Re-run simulation</button>
+      </p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p class="pull">The point estimate clears the ask by 3%. The distribution says it is a coin flip.</p>
+    <p>
+      That is the finding that should change behaviour. A median of $1.49B against a $1.45B ask
+      reads like a green light until you see that the tenth and ninetieth percentiles sit roughly
+      $900M apart — about 63% of the purchase price. No amount of extra spreadsheet detail closes
+      a gap that wide, because the gap is not coming from arithmetic. It is coming from genuinely
+      not knowing what a hospital's margins look like in 2032.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 05 LBO ============ -->
+<section class="cblock" id="lboLab">
+  <div class="cblock__head">
+    <span class="cblock__no">05</span>
+    <h2 class="cblock__title">The same asset, a different buyer</h2>
+  </div>
+  <div class="prose">
+    <p>
+      A DCF answers "what is this worth?" A sponsor asks a narrower question: "what can I pay
+      and still return 20% to my LPs?" Those are not the same question, and the difference is
+      not a rounding error.
+    </p>
+    <p>
+      The model below levers the business, sweeps every dollar of free cash flow against the
+      debt, and exits on a multiple. Because entry debt is set by the leverage multiple rather
+      than the price, exit equity does not move with what you pay — so the affordable price
+      solves directly rather than by iteration.
+    </p>
+  </div>
+
+  <div class="lab">
+    <div class="lab__head">
+      <span class="lab__title"><i>◆</i> Sponsor returns at the $1.45B ask</span>
+      <span class="lab__hint">Debt priced at 7.5%; hurdle fixed at 20%.</span>
+    </div>
+    <div class="lab__grid">
+      <div class="lab__controls">
+        <div class="ctl">
+          <label for="lboLev">Entry leverage <b id="lboLevv">5.5× EBITDA</b></label>
+          <input type="range" id="lboLev" min="35" max="70" value="55" step="1" />
+          <div class="ctl__scale"><span>3.5×</span><span>7.0×</span></div>
+        </div>
+        <div class="ctl">
+          <label for="lboExit">Exit multiple <b id="lboExitv">8.5× EBITDA</b></label>
+          <input type="range" id="lboExit" min="65" max="110" value="85" step="1" />
+          <div class="ctl__scale"><span>6.5×</span><span>11.0×</span></div>
+        </div>
+        <div class="ctl">
+          <label for="lboHold">Hold period <b id="lboHoldv">5 years</b></label>
+          <input type="range" id="lboHold" min="3" max="5" value="5" step="1" />
+          <div class="ctl__scale"><span>3 yrs</span><span>5 yrs</span></div>
+        </div>
+      </div>
+      <div class="lab__out">
+        <div class="readout">
+          <div><span>Sponsor IRR</span><b id="lboIrr">15.6%</b></div>
+          <div><span>Money-on-money</span><b id="lboMoM">2.06×</b></div>
+          <div><span>Max price at 20%</span><b id="lboMax">$1.35B</b></div>
+          <div><span>Gap to ask</span><b id="lboGap">$0.10B</b></div>
+        </div>
+        <div class="chart" id="lboChart"></div>
+        <p class="chart__cap">Net debt through the hold, assuming a full cash sweep.</p>
+        <div class="verdict" id="lboVerdict"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>
+      At the ask, a sponsor earns about 15.6% — respectable, and not what they raised the fund
+      to do. To hit 20% they need to buy at roughly $1.35B. The strategic buyer, discounting the
+      same cash flows at a lower cost of capital and able to fold back-office and contracting into
+      an existing platform, gets to $1.49B on the same operating assumptions.
+    </p>
+    <p>
+      <strong>That $140M spread is not a modelling artefact. It is the deal.</strong> It tells you
+      who wins this auction, roughly what it clears at, and what the loser's walk-away number is.
+    </p>
+  </div>
+
+  <div class="chart" id="fieldChart"></div>
+  <p class="chart__cap">
+    Valuation range by method — the football field. The terracotta line is the ask. Note how
+    little of the DCF range sits below it, and how much of the LBO range does.
+  </p>
+</section>
+
+<!-- ============ 06 RECOMMENDATION ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">06</span>
+    <h2 class="cblock__title">What I would actually tell the committee</h2>
+  </div>
+  <div class="prose">
+    <ol>
+      <li>
+        <strong>Bid, but not at the ask.</strong> Open at $1.38B — inside the sponsor's ceiling,
+        so the competing bid has to stretch, and comfortably inside our own range. The DCF
+        supports more; the distribution does not support paying more on the DCF alone.
+      </li>
+      <li>
+        <strong>Put the disagreement in the structure, not the price.</strong> The single widest
+        input is the terminal margin, and the thing most likely to move it is payer mix. So
+        fund $70–90M of the consideration as an earn-out tied to commercial-payer share holding
+        above its current level for eight quarters. If the seller believes their own forecast,
+        this is cheap for them to accept. If they refuse, that refusal is information.
+      </li>
+      <li>
+        <strong>Set the walk-away at $1.52B and write it down before the process starts.</strong>
+        Above that number we are underwriting more than $150M of present-value synergy, and we
+        have not yet named a single one with an owner and a date against it.
+      </li>
+      <li>
+        <strong>Do the synergy work before the second round, not after.</strong> The whole case
+        for paying above sponsor economics rests on integration value. Right now that is a
+        belief. It needs to become a schedule.
+      </li>
+    </ol>
+
+    <h3>What would change my mind</h3>
+    <ul>
+      <li>A payer contract renewal that locks commercial mix for three or more years — that
+        collapses the widest part of the distribution and justifies bidding closer to $1.5B.</li>
+      <li>Deferred maintenance capex materially above the 5.5% run-rate. Hospitals hide this,
+        and it comes straight out of terminal value.</li>
+      <li>Any sign the sponsor is buying a platform rather than an asset. Platform buyers pay
+        for strategic optionality that this model cannot see, and they will outbid us.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 07 LIMITS ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">07</span>
+    <h2 class="cblock__title">Where this model is weakest</h2>
+  </div>
+  <div class="prose">
+    <p>
+      A case study that only lists its strengths is marketing. Four things here would not
+      survive a real diligence process without more work:
+    </p>
+    <ul>
+      <li>
+        <strong>One blended margin hides four hospitals.</strong> Systems are rarely uniform —
+        typically one site carries the others. A site-level build would change the capex profile
+        and probably reveal a divestiture candidate.
+      </li>
+      <li>
+        <strong>The terminal value is doing 77% of the work.</strong> I have flagged it rather
+        than fixed it. A fade model, stepping returns down toward the cost of capital, would be
+        more defensible than a single perpetual growth rate.
+      </li>
+      <li>
+        <strong>Normal distributions have thin tails.</strong> Healthcare risk is not symmetric —
+        reimbursement changes and malpractice events are one-sided. A skewed or fat-tailed draw
+        would widen the downside more than the upside.
+      </li>
+      <li>
+        <strong>The cash sweep is generous.</strong> Real credit agreements have mandatory
+        amortisation, cash-flow sweeps with step-downs, and covenant headroom that forces
+        equity cures. Each of those pushes the sponsor's affordable price lower, not higher.
+      </li>
+    </ul>
+  </div>
+</section>
+
+</div>
+
+<nav class="cnext">
+  <a href="index.html">
+    <span class="cnext__l">← All case studies</span>
+  </a>
+  <a href="consulting-cost-to-serve.html" data-cursor="Read">
+    <span class="cnext__l">Next — Consulting</span>
+    <span class="cnext__t">Where did 420 basis points go?</span>
+  </a>
+</nav>
+
+</main>
+
+<footer class="footer">
+  <span>© <span id="year">2026</span> Adwait Chavan</span>
+  <span class="footer__mid">Every number on this page is computed live in your browser.</span>
+  <button class="totop magnetic" id="toTop" data-cursor="Top">Back to top ↑</button>
+</footer>
+
+<aside class="statusbar" aria-label="Contact details">
+  <span class="sb__item sb__loc">
+    <i class="sb__pin" aria-hidden="true"></i>
+    <b class="sb__full">Based in the United States</b><b class="sb__short">United States</b>
+  </span>
+  <span class="sb__item sb__clock">
+    <i class="sb__pulse" aria-hidden="true"></i>
+    <b><span id="clock">--:--:--</span></b>
+  </span>
+  <a class="sb__item" href="https://www.linkedin.com/in/adwait-chavan-65b953113/" target="_blank" rel="noopener" data-cursor="Open"><b>LinkedIn</b></a>
+  <a class="sb__item" href="mailto:adwaitc07@gmail.com" data-cursor="Mail">
+    <b class="sb__full">adwaitc07@gmail.com</b><b class="sb__short">Email</b>
+  </a>
+</aside>
+
+<script src="../assets/js/main.js?v=20260921"></script>
+<script src="../assets/js/charts.js?v=20260921"></script>
+<script src="../assets/js/case-finance.js?v=20260921"></script>
+</body>
+</html>

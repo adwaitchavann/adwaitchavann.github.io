@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" class="no-js" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Case Studies — Adwait Chavan</title>
+<meta name="description" content="Three worked case studies in finance, consulting and strategy — each with a live model you can drive: a DCF with Monte Carlo, a margin bridge with cost-to-serve, and a portfolio optimiser." />
+<meta name="author" content="Adwait Chavan" />
+<meta name="theme-color" content="#F2EDE4" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Case Studies — Adwait Chavan" />
+<meta property="og:description" content="Finance, consulting and strategy — three decisions, three working models, no spreadsheets required." />
+<meta property="og:image" content="../assets/img/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23C1512A'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' font-weight='700' fill='%23F5F1E8' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/style.css?v=20260921" />
+<link rel="stylesheet" href="../assets/css/case.css?v=20260921" />
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav__mark magnetic" href="../index.html" aria-label="Adwait Chavan, home">
+    <span class="nav__mark-box">AC</span>
+    <span class="nav__mark-txt">Adwait&nbsp;Chavan</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#work">Work</a>
+    <a href="index.html" aria-current="page">Case Studies</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#beyond">Beyond</a>
+  </nav>
+  <div class="nav__right">
+    <button class="theme-toggle magnetic" id="themeToggle" aria-label="Toggle colour theme" title="Toggle theme">
+      <svg viewBox="0 0 24 24" class="ico-sun" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.2" y2="6.2"/><line x1="17.8" y1="17.8" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.2" y2="17.8"/><line x1="17.8" y1="6.2" x2="19.6" y2="4.4"/></g></svg>
+      <svg viewBox="0 0 24 24" class="ico-moon" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4 8.6 8.6 0 1 0 20 14.2Z"/></svg>
+    </button>
+    <a class="btn btn--sm magnetic" href="../assets/docs/Adwait-Chavan-Resume.pdf" target="_blank" rel="noopener" data-cursor="Open">
+      Résumé <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+    </a>
+  </div>
+</header>
+
+<main>
+
+<header class="chero">
+  <div class="chero__crumb">
+    <a href="../index.html">Home</a><i>/</i><span>Case Studies</span>
+  </div>
+  <p class="chero__kind">Worked problems</p>
+  <h1 class="chero__title">Case <span class="serif">studies</span></h1>
+  <p class="chero__standfirst">
+    Three decisions I found interesting enough to actually model — one in finance, one
+    in consulting, one in strategy. Each is a full analysis with a live model attached,
+    so you can move the assumptions and watch the recommendation change.
+  </p>
+
+  <div class="chero__meta">
+    <div><span>Pieces</span><b>3 case studies</b></div>
+    <div><span>Models</span><b>5 interactive labs</b></div>
+    <div><span>Dependencies</span><b>None — vanilla JS</b></div>
+    <div><span>Data</span><b>Illustrative composites</b></div>
+  </div>
+</header>
+
+<div class="cbody">
+
+<section class="cblock" style="border-top:0">
+  <div class="prose">
+    <p>
+      Most portfolio case studies are screenshots of a spreadsheet someone can no longer
+      open. These are not. Every figure on every page — the discount rates, the ten-thousand-trial
+      simulation, the knapsack that picks nine initiatives out of twelve — is computed in your
+      browser when the page loads, from models I wrote from scratch with no charting library
+      and no framework.
+    </p>
+    <p>
+      That is partly a craft decision and partly an honest one. If a case study cannot survive
+      you moving its assumptions, it was never analysis. It was a conclusion with decoration.
+    </p>
+  </div>
+
+  <div class="cgrid">
+
+    <a class="ccard" href="finance-hospital-valuation.html" data-cursor="Read">
+      <span class="ccard__kind">01 — Finance</span>
+      <h2 class="ccard__title">What is a hospital system actually worth?</h2>
+      <p class="ccard__sum">
+        A four-hospital regional operator is on the block at $1.45B. The DCF says yes by 3%.
+        Ten thousand Monte Carlo trials say it is a coin flip, and the LBO says a sponsor
+        cannot get there at all. The $140M gap between those two buyers is the whole deal.
+      </p>
+      <div class="ccard__tools">
+        <span>DCF</span><span>Monte Carlo</span><span>LBO</span><span>Sensitivity</span>
+      </div>
+      <span class="ccard__foot">
+        Read the case
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg>
+      </span>
+    </a>
+
+    <a class="ccard" href="consulting-cost-to-serve.html" data-cursor="Read">
+      <span class="ccard__kind">02 — Consulting</span>
+      <h2 class="ccard__title">Where did 420 basis points go?</h2>
+      <p class="ccard__sum">
+        A last-mile carrier grew revenue 18% and lost 420bps of margin doing it. A MECE bridge
+        and a bottom-up cost-to-serve build locate the segment that ate the difference — and
+        the compensation plan that kept feeding it.
+      </p>
+      <div class="ccard__tools">
+        <span>Profit bridge</span><span>Cost to serve</span><span>Elasticity</span><span>Driver tree</span>
+      </div>
+      <span class="ccard__foot">
+        Read the case
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg>
+      </span>
+    </a>
+
+    <a class="ccard" href="strategy-ai-portfolio.html" data-cursor="Read">
+      <span class="ccard__kind">03 — Strategy</span>
+      <h2 class="ccard__title">Twelve AI bets, one budget</h2>
+      <p class="ccard__sum">
+        Every prioritisation workshop ends at the same 2×2. Solved properly as a constrained
+        allocation problem, the same $18M buys 46% more expected value — and the two initiatives
+        with the biggest headline numbers never get funded.
+      </p>
+      <div class="ccard__tools">
+        <span>Risk-adjusted NPV</span><span>0/1 knapsack</span><span>Real options</span>
+      </div>
+      <span class="ccard__foot">
+        Read the case
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M19 5H9M19 5v10"/></svg>
+      </span>
+    </a>
+
+  </div>
+</section>
+
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">—</span>
+    <h2 class="cblock__title">A note on the data</h2>
+  </div>
+  <div class="prose">
+    <p>
+      Every company in these three pieces is an <strong>illustrative composite</strong>, built
+      so its operating profile sits inside publicly documented ranges for its industry. I chose
+      that deliberately over the alternative, which is to attach invented financials to a real
+      company's name and hope nobody checks.
+    </p>
+    <p>
+      What is real is everything built on top: the discounting, the correlation structure in the
+      simulation, the debt schedule, the MECE decomposition that sums exactly to the observed
+      change, and the dynamic program that solves the allocation to optimality rather than
+      approximating it. Those are the parts of the work that transfer to a real dataset — and
+      the parts worth judging.
+    </p>
+    <p>
+      Each case also carries a section on where its own model is weakest, because an analysis
+      that only argues its own case is a pitch.
+    </p>
+  </div>
+</section>
+
+</div>
+
+<nav class="cnext">
+  <a href="../index.html">
+    <span class="cnext__l">← Back to the portfolio</span>
+  </a>
+  <a href="mailto:adwaitc07@gmail.com?subject=Your%20case%20studies" data-cursor="Write">
+    <span class="cnext__l">Disagree with any of it?</span>
+    <span class="cnext__t">Tell me where I'm wrong</span>
+  </a>
+</nav>
+
+</main>
+
+<footer class="footer">
+  <span>© <span id="year">2026</span> Adwait Chavan</span>
+  <span class="footer__mid">Built from scratch — no template, no page builder.</span>
+  <button class="totop magnetic" id="toTop" data-cursor="Top">Back to top ↑</button>
+</footer>
+
+<aside class="statusbar" aria-label="Contact details">
+  <span class="sb__item sb__loc">
+    <i class="sb__pin" aria-hidden="true"></i>
+    <b class="sb__full">Based in the United States</b><b class="sb__short">United States</b>
+  </span>
+  <span class="sb__item sb__clock">
+    <i class="sb__pulse" aria-hidden="true"></i>
+    <b><span id="clock">--:--:--</span></b>
+  </span>
+  <a class="sb__item" href="https://www.linkedin.com/in/adwait-chavan-65b953113/" target="_blank" rel="noopener" data-cursor="Open"><b>LinkedIn</b></a>
+  <a class="sb__item" href="mailto:adwaitc07@gmail.com" data-cursor="Mail">
+    <b class="sb__full">adwaitc07@gmail.com</b><b class="sb__short">Email</b>
+  </a>
+</aside>
+
+<script src="../assets/js/main.js?v=20260921"></script>
+</body>
+</html>

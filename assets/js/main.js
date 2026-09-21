@@ -285,6 +285,9 @@
   (function scrollChrome() {
     var nav = $('#nav');
     var bar = $('#scrollBar');
+    // Case-study pages ship the nav without the burger menu, so this can be
+    // null. Cached rather than queried per frame.
+    var menu = $('#menu');
     var last = window.scrollY;
     var ticking = false;
     var sections = $$('main section[id]');
@@ -297,7 +300,8 @@
 
       if (nav) {
         nav.classList.toggle('is-stuck', y > 24);
-        var goingDown = y > last && y > 320 && !$('#menu').classList.contains('is-open');
+        var menuOpen = menu ? menu.classList.contains('is-open') : false;
+        var goingDown = y > last && y > 320 && !menuOpen;
         nav.classList.toggle('is-hidden', goingDown);
       }
 

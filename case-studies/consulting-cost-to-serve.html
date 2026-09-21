@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en" class="no-js" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Where did 420 basis points go? — Adwait Chavan</title>
+<meta name="description" content="A last-mile carrier grew revenue 18% and lost 420bps of margin doing it. A MECE profit bridge and a cost-to-serve build find the segment that ate the difference." />
+<meta name="author" content="Adwait Chavan" />
+<meta name="theme-color" content="#F2EDE4" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Where did 420 basis points go?" />
+<meta property="og:description" content="The company grew its way into a margin problem. Here is the decomposition that proves it." />
+<meta property="og:image" content="../assets/img/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23C1512A'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' font-weight='700' fill='%23F5F1E8' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/style.css?v=20260921" />
+<link rel="stylesheet" href="../assets/css/case.css?v=20260921" />
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav__mark magnetic" href="../index.html" aria-label="Adwait Chavan, home">
+    <span class="nav__mark-box">AC</span>
+    <span class="nav__mark-txt">Adwait&nbsp;Chavan</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#work">Work</a>
+    <a href="index.html">Case Studies</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#beyond">Beyond</a>
+  </nav>
+  <div class="nav__right">
+    <button class="theme-toggle magnetic" id="themeToggle" aria-label="Toggle colour theme" title="Toggle theme">
+      <svg viewBox="0 0 24 24" class="ico-sun" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.2" y2="6.2"/><line x1="17.8" y1="17.8" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.2" y2="17.8"/><line x1="17.8" y1="6.2" x2="19.6" y2="4.4"/></g></svg>
+      <svg viewBox="0 0 24 24" class="ico-moon" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4 8.6 8.6 0 1 0 20 14.2Z"/></svg>
+    </button>
+    <a class="btn btn--sm magnetic" href="../assets/docs/Adwait-Chavan-Resume.pdf" target="_blank" rel="noopener" data-cursor="Open">
+      Résumé <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12L12 4M12 4H6M12 4v6"/></svg>
+    </a>
+  </div>
+</header>
+
+<main>
+
+<header class="chero">
+  <div class="chero__crumb">
+    <a href="../index.html">Home</a><i>/</i><a href="index.html">Case Studies</a><i>/</i><span>Consulting</span>
+  </div>
+  <p class="chero__kind">Case 02 — Consulting &amp; Diagnosis</p>
+  <h1 class="chero__title">
+    Where did <span class="serif">420</span> basis points go?
+  </h1>
+  <p class="chero__standfirst">
+    A last-mile carrier grew revenue 18% over six quarters and lost 420 basis points of
+    gross margin doing it. The CEO blamed fuel. The board blamed pricing. Both were
+    partly right, and neither was the answer.
+  </p>
+
+  <div class="chero__meta">
+    <div><span>Discipline</span><b>Profitability diagnosis</b></div>
+    <div><span>Methods</span><b>MECE bridge · Cost to serve</b></div>
+    <div><span>Structure</span><b>Hypothesis-led</b></div>
+    <div><span>Read</span><b>8 minutes</b></div>
+  </div>
+</header>
+
+<div class="cbody">
+
+<!-- ============ 01 SITUATION ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">01</span>
+    <h2 class="cblock__title">Situation, complication, question</h2>
+  </div>
+  <div class="prose">
+    <p>
+      <strong>NorthRoute Logistics</strong> runs first- and last-mile delivery across a regional
+      network: roughly 5.3 million drops a month, $105M of quarterly revenue. For two years the
+      story was growth. Then the gross margin started sliding, and it did not stop.
+    </p>
+    <ul>
+      <li><strong>Situation.</strong> Revenue up 18% across six quarters. Every commercial metric the board watches is green.</li>
+      <li><strong>Complication.</strong> Gross margin fell from 24.1% to 19.9%. Gross profit is flat in absolute dollars — the company has added a fifth of its revenue and none of its profit.</li>
+      <li><strong>Question.</strong> Is this a cost problem the operations team can fix, or a revenue problem only the commercial team can?</li>
+    </ul>
+    <p>
+      The instinct in the room was to go hunting for cost savings, because that is the lever
+      an operator controls. But a margin decline during a growth phase has a specific smell to
+      it, and it is usually not diesel.
+    </p>
+
+    <div class="kpis">
+      <div><b>+18<span class="u">%</span></b><span>Revenue growth over six quarters</span></div>
+      <div><b>−420<span class="u">bps</span></b><span>Gross margin over the same period</span></div>
+      <div><b>−240<span class="u">bps</span></b><span>From customer mix alone</span></div>
+      <div><b>$0<span class="u">M</span></b><span>Change in absolute gross profit</span></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <p class="note__k">Method note</p>
+    <p>
+      NorthRoute is an <strong>illustrative composite</strong>. The structure is what matters:
+      a decomposition that sums exactly to the observed change, and a segment build that
+      reconciles independently to the same margin. Both run live below — the bridge and the
+      cost-to-serve model are not two pictures of one story, they are two calculations that
+      have to agree.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 02 THE BRIDGE ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">02</span>
+    <h2 class="cblock__title">Decompose before you diagnose</h2>
+  </div>
+  <div class="prose">
+    <p>
+      The first job is arithmetic, not insight. Break the 420bps into pieces that are mutually
+      exclusive and collectively exhaustive, and make them sum to exactly 420 — not "roughly",
+      not "the rest is other". If the bridge does not close, the story built on it is fiction.
+    </p>
+    <p>
+      Six drivers, isolated by holding everything else at prior-period levels:
+    </p>
+  </div>
+
+  <div class="lab">
+    <div class="lab__head">
+      <span class="lab__title"><i>◆</i> Gross margin bridge — Q1 to Q6</span>
+      <span class="lab__hint">Hover any bar for the exact contribution.</span>
+    </div>
+    <div class="lab__out">
+      <div class="chart" id="bridgeChart"></div>
+      <p class="chart__cap">
+        Route density is the only thing working in the company's favour — and it is being
+        outrun four to one.
+      </p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>
+      Fuel and linehaul cost 95bps. Real, worth fixing, and nowhere near the whole story. Labour
+      productivity another 70. The single largest line is <strong>customer mix at −240bps</strong>,
+      and mix is not an operating failure. Mix is the arithmetic consequence of which customers
+      the sales team signed.
+    </p>
+    <p class="pull">This is not a cost problem wearing a revenue costume. It is a revenue problem the cost line is reporting.</p>
+    <p>
+      Which gives a testable hypothesis: <em>growth has been concentrated in a segment that does
+      not cover its own cost to serve.</em> That is falsifiable — build the segment P&amp;L and
+      either a below-breakeven segment exists or it does not.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 03 COST TO SERVE ============ -->
+<section class="cblock" id="ctsLab">
+  <div class="cblock__head">
+    <span class="cblock__no">03</span>
+    <h2 class="cblock__title">The segment that ate the margin</h2>
+  </div>
+  <div class="prose">
+    <p>
+      Company-level margin is an average, and averages hide exactly the thing you are looking
+      for. Rebuilt bottom-up — revenue per drop against fully-loaded cost per drop, by segment —
+      the picture stops being ambiguous.
+    </p>
+  </div>
+
+  <div class="lab">
+    <div class="lab__head">
+      <span class="lab__title"><i>◆</i> Cost to serve by segment</span>
+      <span class="lab__hint">Bubble size is quarterly revenue. Dashed outline is the segment in question.</span>
+    </div>
+    <div class="lab__out">
+      <div class="chart" id="ctsChart"></div>
+      <p class="chart__cap">
+        Five segments sit above breakeven. One sits below it — and it is the second-largest by
+        volume in the network.
+      </p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>
+      <strong>E-comm returns</strong> is <span id="ecrShare">14%</span> of revenue, 1.18 million
+      drops a month, and loses 45 cents on every one of them. It is the segment that grew fastest.
+      Strip it out entirely and group margin would be <span id="exMargin">24.9%</span> —
+      <span id="exBps">+509 bps</span>, more than the entire decline the board is asking about.
+    </p>
+    <p>
+      So why is it so expensive? Not linehaul, and not labour rates. The cost stack shows it:
+    </p>
+  </div>
+
+  <div class="lab">
+    <div class="lab__head">
+      <span class="lab__title"><i>◆</i> Cost stack per drop</span>
+      <span class="lab__hint">Same four cost pools across every segment.</span>
+    </div>
+    <div class="lab__out">
+      <div class="chart" id="buildChart"></div>
+      <p class="chart__cap">
+        Failed-delivery rework runs about 35&cent; a drop across the network. On E-comm returns
+        it is $1.05 — three times everyone else, on the thinnest revenue per drop in the book.
+      </p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>
+      That is the mechanism. Returns pickups need someone home with a package ready. The
+      first-attempt success rate is far below a normal delivery, so a meaningful share of drops
+      get made twice and paid for once. Every incremental returns contract the sales team signed
+      added revenue, volume, and negative contribution simultaneously.
+    </p>
+
+    <h3>The root cause is not in operations</h3>
+    <p>
+      Sales commission at NorthRoute is paid on revenue. E-comm returns is the easiest contract
+      in the portfolio to win, because nobody else wants it. The compensation plan was quietly
+      paying people to destroy margin, and every individual involved was behaving rationally.
+      <strong>The incentive built the problem; operations just reported it.</strong>
+    </p>
+  </div>
+
+  <div class="tree">
+    <div class="tree__row">
+      <div class="tree__node tree__node--root">
+        <span>Observed</span><b class="is-neg">−420 bps</b>
+        <small>Gross margin, Q1 → Q6</small>
+      </div>
+    </div>
+    <div class="tree__join"></div>
+    <div class="tree__row">
+      <div class="tree__node"><span>Operating drivers</span><b class="is-neg">−220 bps</b><small>Fuel, linehaul, labour, rework</small></div>
+      <div class="tree__node tree__node--lead"><span>Commercial drivers</span><b class="is-neg">−325 bps</b><small>Mix and rate realisation</small></div>
+      <div class="tree__node"><span>Scale offset</span><b class="is-pos">+125 bps</b><small>Route density from volume</small></div>
+    </div>
+    <div class="tree__join"></div>
+    <div class="tree__row">
+      <div class="tree__node tree__node--lead"><span>Root cause</span><b>Revenue-based sales comp</b><small>Rewards the contracts that cost most to serve</small></div>
+      <div class="tree__node"><span>Mechanism</span><b>$1.05 rework</b><small>Failed first attempts on returns pickups</small></div>
+      <div class="tree__node"><span>Constraint</span><b>Density</b><small>Those drops subsidise every other route</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 WHAT TO DO ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">04</span>
+    <h2 class="cblock__title">Re-price, don't exit</h2>
+  </div>
+  <div class="prose">
+    <p>
+      The tempting move is to kill the segment. The model says that is worth +509bps, which is
+      more than the problem — and that is precisely why it should be treated with suspicion.
+      Those 1.18 million monthly drops pay for route density that every other segment rides on.
+      Remove them and the +125bps density benefit in the bridge starts unwinding.
+    </p>
+    <p>
+      Re-pricing is the sharper instrument, and the question becomes how much volume you are
+      willing to lose. Try it:
+    </p>
+  </div>
+
+  <div class="lab">
+    <div class="lab__head">
+      <span class="lab__title"><i>◆</i> Re-pricing simulator — E-comm returns</span>
+      <span class="lab__hint">Price rises shed volume at the elasticity you set.</span>
+    </div>
+    <div class="lab__grid">
+      <div class="lab__controls">
+        <div class="ctl">
+          <label for="rePrice">Price change <b id="rePricev">+0%</b></label>
+          <input type="range" id="rePrice" min="-10" max="40" value="0" step="1" />
+          <div class="ctl__scale"><span>−10%</span><span>+40%</span></div>
+        </div>
+        <div class="ctl">
+          <label for="elast">Demand elasticity <b id="elastv">−1.20</b></label>
+          <input type="range" id="elast" min="40" max="220" value="120" step="5" />
+          <div class="ctl__scale"><span>−0.40</span><span>−2.20</span></div>
+        </div>
+        <button class="lab__reset" id="ctsReset" type="button">Reset</button>
+      </div>
+      <div class="lab__out">
+        <div class="readout">
+          <div><span>Contribution / drop</span><b id="segCm">−$0.45</b></div>
+          <div><span>Group margin</span><b id="newMargin">19.8%</b></div>
+          <div><span>Margin change</span><b id="marginDelta">+0 bps</b></div>
+          <div><span>Volume lost</span><b id="volLost">0%</b></div>
+        </div>
+        <div class="verdict" id="ctsVerdict"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>
+      At a −1.2 elasticity, a 15–18% increase turns the segment contribution positive and buys
+      back roughly 220–260bps of group margin while shedding about a fifth of the volume. That
+      churn is not a side effect to be minimised. It is the mechanism — the contracts that walk
+      are the ones that were never worth serving.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 05 RECOMMENDATION ============ -->
+<section class="cblock">
+  <div class="cblock__head">
+    <span class="cblock__no">05</span>
+    <h2 class="cblock__title">What I would put in the readout</h2>
+  </div>
+  <div class="prose">
+    <ol>
+      <li>
+        <strong>Re-price E-comm returns by 15%, on 90 days' notice, in one move.</strong>
+        Expect to lose around 18% of that volume and gain roughly 220bps of group margin.
+        Phasing it invites renegotiation on every contract; doing it once makes it a policy
+        rather than an opening offer.
+      </li>
+      <li>
+        <strong>Attack the 70-cent rework gap in parallel.</strong> Mandatory delivery windows
+        and a pickup authorisation code on returns contracts. If first-attempt success moves to
+        network average, the segment clears breakeven on its own and the price rise becomes
+        upside instead of survival.
+      </li>
+      <li>
+        <strong>Change the commission basis from revenue to contribution.</strong> Everything
+        else here is a one-time correction. This is the only recommendation that stops the
+        problem recurring, and it will be the most unpopular thing in the room.
+      </li>
+      <li>
+        <strong>Model the density unwind before touching volume.</strong> The +125bps scale
+        benefit is real and it is load-bearing. Route-level simulation first, then decide how
+        much churn the network can absorb without the cost base stepping back up.
+      </li>
+    </ol>
+
+    <h3>How I would know if I am wrong</h3>
+    <ul>
+      <li>If first-attempt success on returns is already at network average, the rework story
+        collapses and the problem is simply underpricing — a cleaner fix, and a smaller one.</li>
+      <li>If churn lands materially above 25%, density unwinds faster than the price gain
+        accrues and the net effect could be negative for two to three quarters.</li>
+      <li>If the returns contracts carry volume commitments on other segments, the segment P&amp;L
+        is understating their value and the whole recommendation needs rebuilding at customer
+        level rather than segment level.</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <p class="note__k">Reconciliation</p>
+    <p>
+      The bridge lands at 19.90%. The independent segment build lands at 19.82% — an 8bp gap.
+      In a live engagement I would chase that down rather than round it away; the most likely
+      culprit is period timing on the rework accrual. Leaving a visible gap is better than
+      forcing a tie.
+    </p>
+  </div>
+</section>
+
+</div>
+
+<nav class="cnext">
+  <a href="finance-hospital-valuation.html" data-cursor="Read">
+    <span class="cnext__l">← Previous — Finance</span>
+    <span class="cnext__t">What is a hospital system worth?</span>
+  </a>
+  <a href="strategy-ai-portfolio.html" data-cursor="Read">
+    <span class="cnext__l">Next — Strategy</span>
+    <span class="cnext__t">Twelve AI bets, one budget</span>
+  </a>
+</nav>
+
+</main>
+
+<footer class="footer">
+  <span>© <span id="year">2026</span> Adwait Chavan</span>
+  <span class="footer__mid">Every number on this page is computed live in your browser.</span>
+  <button class="totop magnetic" id="toTop" data-cursor="Top">Back to top ↑</button>
+</footer>
+
+<aside class="statusbar" aria-label="Contact details">
+  <span class="sb__item sb__loc">
+    <i class="sb__pin" aria-hidden="true"></i>
+    <b class="sb__full">Based in the United States</b><b class="sb__short">United States</b>
+  </span>
+  <span class="sb__item sb__clock">
+    <i class="sb__pulse" aria-hidden="true"></i>
+    <b><span id="clock">--:--:--</span></b>
+  </span>
+  <a class="sb__item" href="https://www.linkedin.com/in/adwait-chavan-65b953113/" target="_blank" rel="noopener" data-cursor="Open"><b>LinkedIn</b></a>
+  <a class="sb__item" href="mailto:adwaitc07@gmail.com" data-cursor="Mail">
+    <b class="sb__full">adwaitc07@gmail.com</b><b class="sb__short">Email</b>
+  </a>
+</aside>
+
+<script src="../assets/js/main.js?v=20260921"></script>
+<script src="../assets/js/charts.js?v=20260921"></script>
+<script src="../assets/js/case-consulting.js?v=20260921"></script>
+</body>
+</html>

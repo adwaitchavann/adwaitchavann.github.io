@@ -34,6 +34,7 @@ personal-site/
 │   └── docs/               résumé PDF served by the Résumé button
 ├── tools/
 │   └── add-hobby-photos.sh import + crop the badminton / cricket photos
+├── case-studies/           three long-form analyses with live models
 └── .claude/launch.json     dev-server config for Claude Code's preview pane
 ```
 
@@ -71,6 +72,41 @@ Anything roughly that shape works; `object-fit: cover` handles the rest.
 
 If either file is missing or fails to load, `main.js` adds `.no-photo` to the tile and
 the SVG fallback shows instead — the page never renders a broken image.
+
+---
+
+## Case studies
+
+Three long-form analyses live in `case-studies/`, each with its own model file in
+`assets/js/`:
+
+| Page | Model | What it does |
+|---|---|---|
+| `finance-hospital-valuation.html` | `case-finance.js` | Unlevered DCF, 10,000-trial Monte Carlo with correlated drivers, LBO returns and the price a 20% hurdle supports |
+| `consulting-cost-to-serve.html` | `case-consulting.js` | MECE margin bridge and a bottom-up segment P&L with a re-pricing simulator |
+| `strategy-ai-portfolio.html` | `case-strategy.js` | Risk-adjusted NPV and an exact 0/1 knapsack over twelve initiatives |
+
+`assets/js/charts.js` is a small dependency-free SVG chart library shared by all three
+(waterfall, histogram, scatter, stacked columns, lines, range bars, heat table). Charts
+render at the host element's measured pixel width and re-render on resize. **Colour is
+never written into the SVG** — marks carry semantic classes and `case.css` paints them
+from the theme tokens, so the dark-mode toggle needs no redraw.
+
+Every company in the three cases is an illustrative composite, stated as such on each
+page. The methods are real; the companies are not.
+
+### Asset versioning — read this before you edit CSS or JS
+
+Every stylesheet and script is referenced with a version query, e.g.
+`assets/js/main.js?v=20260921`. GitHub Pages sets long cache lifetimes, so **returning
+visitors keep running your old CSS and JS until that token changes.** After editing
+anything in `assets/css/` or `assets/js/`, bump the token everywhere:
+
+```bash
+cd ~/Desktop/personal-site && grep -rl '?v=' --include='*.html' . | xargs sed -i '' 's/?v=[0-9]\{8\}/?v='"$(date +%Y%m%d)"'/g'
+```
+
+Skipping this is the single most likely reason a change looks like it "didn't deploy".
 
 ---
 
