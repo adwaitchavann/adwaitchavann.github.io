@@ -452,6 +452,7 @@
         svg.appendChild(text(X(t), padT + plotH + 18, o.xFormat ? o.xFormat(t) : t, 'c-tick'));
       });
 
+      var labels = [];
       o.series.forEach(function (s, si) {
         var d = s.points.map(function (p, i) { return (i ? 'L' : 'M') + X(p.x) + ',' + Y(p.y); }).join(' ');
         svg.appendChild(svgEl('path', {
@@ -461,7 +462,17 @@
           svg.appendChild(svgEl('circle', { class: 'c-dot c-dot--' + (si + 1), cx: X(p.x), cy: Y(p.y), r: 3.4 }));
         });
         var last = s.points[s.points.length - 1];
-        svg.appendChild(text(X(last.x) + 8, Y(last.y) + 4, s.name, 'c-serieslabel c-serieslabel--' + (si + 1), 'start'));
+        labels.push({ x: X(last.x) + 8, y: Y(last.y) + 4, name: s.name, si: si });
+      });
+
+      /* Series that converge end at the same height, so nudge labels apart
+         rather than letting them print on top of each other. */
+      labels.sort(function (a, b) { return a.y - b.y; });
+      for (var li = 1; li < labels.length; li++) {
+        if (labels[li].y - labels[li - 1].y < 13) labels[li].y = labels[li - 1].y + 13;
+      }
+      labels.forEach(function (l) {
+        svg.appendChild(text(l.x, l.y, l.name, 'c-serieslabel c-serieslabel--' + (l.si + 1), 'start'));
       });
     });
     return chart && chart.update(opts);

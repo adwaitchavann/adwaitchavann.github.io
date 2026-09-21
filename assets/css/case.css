@@ -337,10 +337,15 @@ html[data-theme="dark"]{
 
 .c-line{ fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round; }
 .c-line--dash{ stroke-dasharray:5 4; }
-.c-line--1,.c-dot--1{ stroke:var(--accent); fill:var(--accent); }
-.c-line--2,.c-dot--2{ stroke:var(--pos); fill:var(--pos); }
-.c-line--3,.c-dot--3{ stroke:var(--ink-faint); fill:var(--ink-faint); }
+/* Keep stroke and fill on separate selectors: a combined rule set fill on the
+   line path too, which painted the whole area under each series. */
+.c-line--1{ stroke:var(--accent); }
+.c-line--2{ stroke:var(--pos); }
+.c-line--3{ stroke:var(--ink-faint); }
 .c-dot{ stroke:none; }
+.c-dot--1{ fill:var(--accent); }
+.c-dot--2{ fill:var(--pos); }
+.c-dot--3{ fill:var(--ink-faint); }
 .c-serieslabel{ font:600 10.5px var(--f-body); }
 .c-serieslabel--1{ fill:var(--accent); } .c-serieslabel--2{ fill:var(--pos); } .c-serieslabel--3{ fill:var(--ink-faint); }
 
